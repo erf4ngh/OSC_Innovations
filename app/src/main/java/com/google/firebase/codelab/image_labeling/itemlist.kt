@@ -1,12 +1,14 @@
 package com.google.firebase.codelab.image_labeling
 
-import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_itemlist.*
 import android.view.View
+import java.util.*
 
 class itemlist : AppCompatActivity() {
+
+    var random = Random()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,21 +22,63 @@ class itemlist : AppCompatActivity() {
         actionbar.setDisplayHomeAsUpEnabled(true)
         actionbar.setDisplayHomeAsUpEnabled(true)
 
-        if (sunglasses == true) {
-            txtItem1.setText("     sunglasses found!")
+        if (itemName == "yellow" || itemName == "red"){
+            txtItem.setText("something that is the colour " + itemName)
         }
-        if (hand == true){
-            txtItem2.setText("     hand found!")
+        else{
+            txtItem.setText(itemName)
         }
-        if (cube == true){
-            txtItem3.setText("     cube found!")
+
+        if (itemFound == true){
+            txtPrompt.setText("Well done, you found it! Use the button below to find your next item!")
         }
-        if (shoe == true){
-            txtItem4.setText("     shoe found!")
+
+        if (difficulty == false){
+            radEasy.isChecked = true
         }
-        if (chair == true){
-            txtItem5.setText("     chair found!")
+        if (difficulty == true){
+            radHard.isChecked = true
         }
+
+        val radEasyCheck = View.OnClickListener {
+            radHard.isChecked = false
+            difficulty = false
+        }
+        val radHardCheck = View.OnClickListener {
+            radEasy.isChecked = false
+            difficulty = true
+        }
+
+        val newItemGen = View.OnClickListener {
+            if (radEasy.isChecked == true || radHard.isChecked == true){
+
+                while (itemNum == tempNum){
+                    itemNum = random.nextInt(5 + 0) + 0
+                }
+
+                tempNum = itemNum
+
+                if (radEasy.isChecked == true){
+                    itemName =  easyList[itemNum]
+                }
+                if (radHard.isChecked == true){
+                    itemName = hardList[itemNum]
+                }
+
+                if (itemName == "yellow" || itemName == "red"){
+                    txtItem.setText("something that is the colour " + itemName)
+                }
+                else{
+                    txtItem.setText(itemName)
+                }
+
+                txtPrompt.setText("")
+            }
+        }
+
+        btnNew.setOnClickListener(newItemGen)
+        radEasy.setOnClickListener(radEasyCheck)
+        radHard.setOnClickListener(radHardCheck)
     }
 
     override fun onSupportNavigateUp(): Boolean {

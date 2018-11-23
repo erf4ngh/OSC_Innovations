@@ -14,11 +14,13 @@ import com.google.firebase.ml.vision.label.FirebaseVisionLabel
 import kotlinx.android.synthetic.main.item_row.view.*
 import kotlinx.android.synthetic.main.activity_main.*
 
-var sunglasses = false
-var hand = false
-var cube = false
-var shoe = false
-var chair = false
+var itemFound = false
+val easyList = arrayOf("yellow", "red", "flower", "sunglasses", "hand")
+val hardList = arrayOf("jewelry", "calculator", "plush toy", "butterfly")
+var itemNum = 0
+var tempNum = 0
+var itemName = ""
+var difficulty = false
 
 class ImageLabelAdapter(private var firebaseVisionList: List<Any>) : RecyclerView.Adapter<ImageLabelAdapter.ItemHolder>() {
 
@@ -29,25 +31,12 @@ class ImageLabelAdapter(private var firebaseVisionList: List<Any>) : RecyclerVie
 
         fun bindCloud(currentItem: FirebaseVisionCloudLabel) {
 
-            if (currentItem.confidence * 100 > 60) {
-                itemView.itemName.text = currentItem.label
-                itemView.itemAccuracy.text = "Probability : ${(currentItem.confidence * 100).toInt()}%"
 
-                if (currentItem.label == "sunglasses" && (currentItem.confidence * 100).toInt() > 80) {
-                    sunglasses = true
-                }
-                if (currentItem.label == "hand" && (currentItem.confidence * 100).toInt() > 80) {
-                    hand = true
-                }
-                if (currentItem.label == "cube" && (currentItem.confidence * 100).toInt() > 80) {
-                    cube = true
-                }
-                if (currentItem.label == "shoe" && (currentItem.confidence * 100).toInt() > 80) {
-                    shoe = true
-                }
-                if (currentItem.label == "chair" && (currentItem.confidence * 100).toInt() > 80) {
-                    chair = true
-                }
+            itemView.itemName.text = currentItem.label
+            itemView.itemAccuracy.text = "Probability : ${(currentItem.confidence * 100).toInt()}%"
+
+            if (currentItem.label == itemName){
+                itemFound = true
             }
 
         }
