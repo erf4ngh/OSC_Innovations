@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Image Labeling</string>
+    <string name="item">Find an item</string>
+    <string name="itemfound">Found the right item</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
