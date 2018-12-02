@@ -27,23 +27,12 @@
             android:textSize="24sp" />
 
         <TextView
-            android:id="@+id/space2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="18sp" />
-
-        <TextView
             android:id="@+id/txtItem1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="     sunglasses"
             android:textColor="@color/red"
             android:textSize="18sp" />
-
-        <TextView
-            android:id="@+id/space3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
 
         <TextView
             android:id="@+id/txtItem2"
@@ -54,11 +43,6 @@
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/space4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <TextView
             android:id="@+id/txtItem3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -67,22 +51,12 @@
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/space5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <TextView
             android:id="@+id/txtItem4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="     shoe"
             android:textColor="@color/red"
             android:textSize="18sp" />
-
-        <TextView
-            android:id="@+id/space6"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
 
         <TextView
             android:id="@+id/txtItem5"
@@ -97,10 +71,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:clickable="true"
+            android:fadingEdge="none|horizontal"
             android:src="@drawable/ic_refresh"
+            android:visibility="visible"
             app:backgroundTint="@color/colorPrimary"
             app:fabSize="normal"
-            app:layout_anchor="@id/layout_bottom_sheet"
             app:layout_anchorGravity="center_horizontal"
             app:rippleColor="@color/colorAccent" />
 

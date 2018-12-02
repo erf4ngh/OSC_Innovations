@@ -33,23 +33,7 @@ abstract class BaseCameraActivity : AppCompatActivity(), View.OnClickListener {
             val intent = Intent(this, itemlist::class.java)
             startActivity(intent)
         }
-
-        var itemList = arrayOf("shoe", "sunglasses")
-
-
-
     }
-
-
-    //override fun onResume() {
-    //    super.onResume()
-    //    cameraView.start()
-    //}
-
-    //override fun onPause() {
-    //    cameraView.stop()
-    //    super.onPause()
-    //}
 
     protected fun showPreview() {
         framePreview.visibility = View.VISIBLE

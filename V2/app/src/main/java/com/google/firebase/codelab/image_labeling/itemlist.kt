@@ -16,8 +16,10 @@ class itemlist : AppCompatActivity() {
 
         //actionbar
         val actionbar = supportActionBar
+
         //set actionbar title
         actionbar!!.title = "Scavenger Hunt List"
+
         //set back button
         actionbar.setDisplayHomeAsUpEnabled(true)
         actionbar.setDisplayHomeAsUpEnabled(true)
@@ -32,35 +34,13 @@ class itemlist : AppCompatActivity() {
         if (itemFound == true){
             txtPrompt.setText("Well done, you found it! Use the button below to find your next item!")
         }
-/*
-        if (difficulty == false){
-            radEasy.isChecked = true
-        }
-        if (difficulty == true){
-            radHard.isChecked = true
-        }
-
-        val radEasyCheck = View.OnClickListener {
-            radHard.isChecked = false
-            difficulty = false
-        }
-        val radHardCheck = View.OnClickListener {
-            radEasy.isChecked = false
-            difficulty = true
-        }
 
         val newItemGen = View.OnClickListener {
-            if (radEasy.isChecked == true || radHard.isChecked == true){
-
-                while (itemNum == tempNum){
+            while (itemNum == tempNum){
                     itemNum = random.nextInt(5 + 0) + 0
                 }
 
                 tempNum = itemNum
-
-                if (radEasy.isChecked == true){
-                    itemName =  list[itemNum]
-                }
 
                 if (itemName == "yellow" || itemName == "red"){
                     txtItem.setText("something that is the colour " + itemName)
@@ -71,12 +51,8 @@ class itemlist : AppCompatActivity() {
 
                 txtPrompt.setText("")
             }
-        }
 
         btnNew.setOnClickListener(newItemGen)
-        radEasy.setOnClickListener(radEasyCheck)
-        radHard.setOnClickListener(radHardCheck)
-        */
     }
 
     override fun onSupportNavigateUp(): Boolean {

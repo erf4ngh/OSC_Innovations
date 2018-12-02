@@ -14,8 +14,10 @@ class itemlist : AppCompatActivity() {
 
         //actionbar
         val actionbar = supportActionBar
+
         //set actionbar title
         actionbar!!.title = "Scavenger Hunt List"
+
         //set back button
         actionbar.setDisplayHomeAsUpEnabled(true)
         actionbar.setDisplayHomeAsUpEnabled(true)

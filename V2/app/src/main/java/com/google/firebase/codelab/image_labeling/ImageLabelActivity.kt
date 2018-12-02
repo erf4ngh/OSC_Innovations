@@ -71,10 +71,10 @@ class ImageLabelActivity : BaseCameraActivity() {
         cameraView.captureImage { cameraKitImage ->
             // Get the Bitmap from the captured shot
             runCloudImageLabeling(cameraKitImage.bitmap)
-            runOnUiThread {
+            /*runOnUiThread {
                 showPreview()
                 imagePreview.setImageBitmap(cameraKitImage.bitmap)
-            }
+            }*/
         }
     }
 

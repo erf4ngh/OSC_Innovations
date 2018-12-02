@@ -15,7 +15,7 @@ import kotlinx.android.synthetic.main.item_row.view.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 var itemFound = false
-val list = arrayOf("yellow", "red", "flower", "sunglasses", "hand", "butterfly", "jewelry", "blue", "green")
+val list = arrayOf("yellow", "red", "flower", "sunglasses", "hand", "butterfly", "jewelry", "blue", "green", "apple", "orange", "banana", "balloon", "dog-like mammal", "darts")
 var itemNum = 0
 var tempNum = 0
 var itemName = ""

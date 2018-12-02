@@ -15,7 +15,18 @@ import kotlinx.android.synthetic.main.item_row.view.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 
-val list = arrayOf("yellow", "red", "flower", "sunglasses", "hand", "butterfly", "jewelry", "blue", "green")
+/*list of objects that work
+val list = arrayOf("yellow", "red", "flower", "sunglasses", "hand", "butterfly", "jewelry", "blue", "green", "apple", "banana", "orange")
+*/
+
+//List of all objects
+val listO = arrayOf("flower", "sunglasses", "hand", "butterfly", "jewelry")
+
+//List of colours
+val listC = arrayOf("yellow", "red", "blue", "green")
+
+//List of fruits
+val listF = arrayOf("apple", "banana", "orange")
 
 var sunglasses = false
 var hand = false
@@ -32,25 +43,23 @@ class ImageLabelAdapter(private var firebaseVisionList: List<Any>) : RecyclerVie
 
         fun bindCloud(currentItem: FirebaseVisionCloudLabel) {
 
-            if (currentItem.confidence * 100 > 60) {
-                itemView.itemName.text = currentItem.label
-                itemView.itemAccuracy.text = "Probability : ${(currentItem.confidence * 100).toInt()}%"
+            itemView.itemName.text = currentItem.label
+            itemView.itemAccuracy.text = "Probability : ${(currentItem.confidence * 100).toInt()}%"
 
-                if (currentItem.label == "sunglasses" && (currentItem.confidence * 100).toInt() > 80) {
-                    sunglasses = true
-                }
-                if (currentItem.label == "hand" && (currentItem.confidence * 100).toInt() > 80) {
-                    hand = true
-                }
-                if (currentItem.label == "cube" && (currentItem.confidence * 100).toInt() > 80) {
-                    cube = true
-                }
-                if (currentItem.label == "shoe" && (currentItem.confidence * 100).toInt() > 80) {
-                    shoe = true
-                }
-                if (currentItem.label == "chair" && (currentItem.confidence * 100).toInt() > 80) {
-                    chair = true
-                }
+            if (currentItem.label == "sunglasses" && (currentItem.confidence * 100).toInt() > 80) {
+                sunglasses = true
+            }
+            if (currentItem.label == "hand" && (currentItem.confidence * 100).toInt() > 80) {
+                hand = true
+            }
+            if (currentItem.label == "cube" && (currentItem.confidence * 100).toInt() > 80) {
+                cube = true
+            }
+            if (currentItem.label == "shoe" && (currentItem.confidence * 100).toInt() > 80) {
+                shoe = true
+            }
+            if (currentItem.label == "chair" && (currentItem.confidence * 100).toInt() > 80) {
+                chair = true
             }
 
         }
