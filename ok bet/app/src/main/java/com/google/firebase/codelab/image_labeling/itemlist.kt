@@ -32,7 +32,7 @@ class itemlist : AppCompatActivity() {
 
         //check item
         if (itemFound == true){
-            txtPrompt.setText("Well done! Click on the button below for a new itemd")
+            txtPrompt.setText("Well done! Click on the button below for a new items")
         }
 
         // next item generation
